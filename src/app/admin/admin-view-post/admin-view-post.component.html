@@ -1,0 +1,32 @@
+<div class="container">
+    <br>
+    <h1>View Post</h1>
+    <br>
+    <form #form="ngForm">
+        <div class="mb-3">
+          <label class="form-label">id</label>
+          <input type="text" class="form-control" name="id" [(ngModel)]="post.id" readonly>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" [(ngModel)]="post.title">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Content</label>
+            <textarea class="form-control" name="content" [(ngModel)]="post.content"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Summary</label>
+            <textarea class="form-control" name="summary" [(ngModel)]="post.summary"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Featured image</label>
+            <input type="text" class="form-control" name="featuredimage" [(ngModel)]="post.featuredImageUrl">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Author</label>
+            <input type="text" class="form-control" name="author" [(ngModel)]="post.author">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
