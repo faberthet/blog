@@ -1,0 +1,14 @@
+<div class="container">
+    <ng-container *ngFor="let post of posts">
+        <ng-container *ngIf="post.visible">
+            <div class="card">
+                <img class="card-img-top" [src]="post.featuredImageUrl" alt="featured image of the post">
+                <div class="card-body">
+                    <h2 class="card-title">{{post.title}}</h2>
+                    <p class="card-text">{{post.summary}}</p>
+                    <a class="btn btn-primary" [routerLink]="['posts/', post.id]">More...</a>
+                </div>
+            </div>
+        </ng-container>
+    </ng-container>
+</div>

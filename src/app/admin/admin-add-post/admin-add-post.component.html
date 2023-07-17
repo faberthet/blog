@@ -1,12 +1,8 @@
 <div class="container">
     <br>
-    <h1>View Post</h1>
+    <h1>Add Post</h1>
     <br>
     <form #form="ngForm" (ngSubmit)="onSubmit()">
-        <div class="mb-3">
-          <label class="form-label">id</label>
-          <input type="text" class="form-control" name="id" [(ngModel)]="post.id" readonly>
-        </div>
         <div class="mb-3">
             <label class="form-label">Title</label>
             <input type="text" class="form-control" name="title" [(ngModel)]="post.title">

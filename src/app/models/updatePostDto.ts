@@ -1,0 +1,12 @@
+export class UpdatePostDto {
+    id!: number;
+    title!:string;
+    content!:string;
+    summary!:string;
+    urlHandle!:string;
+    author!:string;
+    visible!:boolean;
+    publishDate!: Date;
+    updatedDate!: Date;
+    featuredImageUrl!:string;
+}

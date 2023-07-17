@@ -18,5 +18,12 @@ export class AdminPostsComponent implements OnInit{
       response => this.posts=response
     )
   }
-
+  delete(id:number, title:string):void{
+    if(confirm("Are you sure to delete "+title)) {
+      this.postService.deletePost(id).subscribe({
+        next: response => console.log(response),
+        error: error => console.log(error)
+      })
+    }
+  }
 }
