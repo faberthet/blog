@@ -14,16 +14,20 @@ export class AdminPostsComponent implements OnInit{
   constructor(private postService:PostService){}
 
   ngOnInit(): void {
-    this.postService.getAllPosts().subscribe(
-      response => this.posts=response
-    )
+    this.getAllPosts();
   }
   delete(id:number, title:string):void{
     if(confirm("Are you sure to delete "+title)) {
       this.postService.deletePost(id).subscribe({
-        next: response => console.log(response),
+        next: response => [this.getAllPosts(), console.log(response)],
         error: error => console.log(error)
       })
     }
+  }
+
+  getAllPosts(){
+    this.postService.getAllPosts().subscribe(
+      response => this.posts=response
+    )
   }
 }
