@@ -1,0 +1,13 @@
+.container{
+    margin-top: 50px;
+    padding:50px;
+width: 991px;
+    background-color: rgb(255, 255, 255);
+    min-height: 100vh;
+}
+h1{
+    margin-bottom: 30px;
+    font-size: 3.7rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:bold;
+}

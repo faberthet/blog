@@ -1,38 +1,32 @@
-<div class="container">
-    <div class="new-posts">
-        <ng-container *ngFor="let post of posts | slice:0:3; let index=index">
-            <ng-container *ngIf="post.visible">
-                    <div class="card zero" *ngIf="index==0" >
-                        <img class="card-img-top" src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post">
-                        <div class="card-body">
-                            <h2 class="card-title">{{post.title}}</h2>
-                            <p class="card-text">{{post.summary}}</p>
-                            <a class="btn btn-primary" [routerLink]="['/posts/', post.id]">More...</a>
-                        </div>
-                    </div>
-                    <div class="card one" *ngIf="index==1">
-                        <img class="card-img-top" src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post">
-                        <div class="card-body">
-                            <h2 class="card-title">{{post.title}}</h2>
-                            <p class="card-text">{{post.summary}}</p>
-                            <a class="btn btn-primary" [routerLink]="['/posts/', post.id]">More...</a>
-                        </div>
-                    </div>
-                    <div class="card two" *ngIf="index==2">
-                        <img class="card-img-top" src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post">
-                        <div class="card-body">
-                            <h2 class="card-title">{{post.title}}</h2>
-                            <p class="card-text">{{post.summary}}</p>
-                            <a class="btn btn-primary" [routerLink]="['/posts/', post.id]">More...</a>
-                        </div>
-                    </div>
-            </ng-container>
+
+    <div class="new-post">
+        <ng-container *ngFor="let post of posts | slice:0:1;">
+            <img class="new-img" src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post">
+            <div class="new-text">
+                <h2>{{post.title}}</h2>
+                <p class="new-summary">{{post.summary}}</p>
+                <a class="btn btn-primary" [routerLink]="['/posts/', post.id]">More...</a>
+            </div>         
+        </ng-container>
+    </div>
+    <div class="old-posts">
+        <ng-container *ngFor="let post of posts | slice:1:posts.length; let index=index">
+        <div class="card">
+            <img class="card-img-top" src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post">
+            <div class="card-body">
+                <h3 class="card-title">{{post.title}}</h3>
+                <p class="card-text">{{post.summary}}</p>
+                <a class="btn btn-primary" [routerLink]="['/posts/', post.id]">More...</a>
+            </div>
+        </div>
         </ng-container>
     </div>
 
-    <div class="old-posts">
+
+
+    <!-- <div class="old-posts">
         <ng-container *ngFor="let post of posts | slice:3:posts.length; let index=index">
-            <!-- <ng-container *ngIf="post.visible"> -->
+          
                     <div class="old-post">
                         <img class="old-img" src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post">
                         <div class="text">
@@ -41,9 +35,9 @@
                         </div>
                     </div>
             </ng-container>
-        <!-- </ng-container> -->
+       
     </div>
-</div>
+</div> -->
 
 <!-- <div class="card two" *ngIf="index==2">
     <img class="card-img-top" src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post">

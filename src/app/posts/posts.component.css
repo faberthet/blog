@@ -1,8 +1,38 @@
-.new-posts{
+
+.new-post{
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    background-color: rgb(238, 238, 238);
+border-radius: 7px;
+/* border: 1px solid black; */
+}
+
+.new-img{
+    width: 500px;
+    border-radius: 7px;
+}
+.new-text{
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.old-posts{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card{
+    /* width: 300px; */
+}
+
+
+/* .new-posts{
     display: grid;
     grid-template-columns: 66% 33%;
     grid-template-rows: 1fr 1fr;
-    /* height: 500px; */
+   
     width: 80%;
     gap: 8px;
     margin: 15px auto;
@@ -33,4 +63,4 @@ grid-row: 1 / 2;
 .two{
 grid-column: 2 / 3;
 grid-row: 2 / 3;
-}
+} */
