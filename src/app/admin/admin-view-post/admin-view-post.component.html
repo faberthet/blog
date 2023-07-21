@@ -1,12 +1,14 @@
 <div class="container">
+    <a [routerLink]="['/admin/posts']"><button class="btn btn-secondary">back to posts</button></a>
+    <br>
     <br>
     <h1>View Post</h1>
     <br>
     <form #form="ngForm" (ngSubmit)="onSubmit()">
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           <label class="form-label">id</label>
           <input type="text" class="form-control" name="id" [(ngModel)]="post.id" readonly>
-        </div>
+        </div> -->
         <div class="mb-3">
             <label class="form-label">Title</label>
             <input type="text" class="form-control" name="title" [(ngModel)]="post.title">
@@ -15,22 +17,22 @@
             <label class="form-label">Content</label>
             <textarea class="form-control" name="content" [(ngModel)]="post.content"></textarea>
         </div>
-        <div class="mb-3">
+        <!-- <div class="mb-3">
             <label class="form-label">Summary</label>
             <textarea class="form-control" name="summary" [(ngModel)]="post.summary"></textarea>
-        </div>
+        </div> -->
         <div class="mb-3">
-            <label class="form-label">Featured image</label>
+            <label class="form-label">Image</label>
             <input type="text" class="form-control" name="featuredimage" [(ngModel)]="post.featuredImageUrl">
         </div>
-        <div class="mb-3">
+        <!-- <div class="mb-3">
             <label class="form-label">Author</label>
             <input type="text" class="form-control" name="author" [(ngModel)]="post.author">
-        </div>
-        <div class="mb-3">
+        </div> -->
+        <!-- <div class="mb-3">
             <label class="form-label">Url Handle</label>
             <input type="text" class="form-control" name="urlHandle" [(ngModel)]="post.urlHandle">
-        </div>
+        </div> -->
         <div class="form-check mb-3">
             <input class="form-check-input" type="checkbox" name="visible" [(ngModel)]="post.visible">
             <label class="form-check-label">

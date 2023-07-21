@@ -1,6 +1,6 @@
-
+<h1>The Blog</h1>
     <div class="new-post">
-        <ng-container *ngFor="let post of posts | slice:0:1;">
+        <ng-container *ngFor="let post of posts.slice().reverse() | slice:0:1;">
             <img class="new-img" src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post">
             <div class="new-text">
                 <h2>{{post.title}}</h2>
@@ -10,13 +10,13 @@
         </ng-container>
     </div>
     <div class="old-posts">
-        <ng-container *ngFor="let post of posts | slice:1:posts.length; let index=index">
+        <ng-container *ngFor="let post of posts.slice().reverse() | slice:1:posts.length; let index=index">
         <div class="card">
             <img class="card-img-top" src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post">
             <div class="card-body">
                 <h3 class="card-title">{{post.title}}</h3>
-                <p class="card-text">{{post.summary}}</p>
-                <a class="btn btn-primary" [routerLink]="['/posts/', post.id]">More...</a>
+                <p class="card-text">{{post.summary | slice:0:80}}...</p>
+                <!-- <a class="btn btn-primary" [routerLink]="['/posts/', post.id]">More...</a> -->
             </div>
         </div>
         </ng-container>
@@ -24,26 +24,3 @@
 
 
 
-    <!-- <div class="old-posts">
-        <ng-container *ngFor="let post of posts | slice:3:posts.length; let index=index">
-          
-                    <div class="old-post">
-                        <img class="old-img" src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post">
-                        <div class="text">
-                            <a [routerLink]="['/posts/', post.id]"><h2 class="title">{{post.title}}</h2></a>
-                            <p class="summary">{{post.summary}}</p>
-                        </div>
-                    </div>
-            </ng-container>
-       
-    </div>
-</div> -->
-
-<!-- <div class="card two" *ngIf="index==2">
-    <img class="card-img-top" src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post">
-    <div class="card-body">
-        <h2 class="card-title">{{post.title}}</h2>
-        <p class="card-text">{{post.summary}}</p>
-        <a class="btn btn-primary" [routerLink]="['/posts/', post.id]">More...</a>
-    </div>
-</div> -->

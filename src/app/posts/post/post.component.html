@@ -1,11 +1,14 @@
 <div class="container">
-    <ng-container *ngIf="loaded">
-        <div class="card">
-            <img class="card-img-top" src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post">
-            <div class="card-body">
-                <h5 class="card-title">{{post.title}}</h5>
-                <p class="card-text">{{post.content}}</p>
-            </div>
-        </div>
-    </ng-container>
+    
+    <div class="frame">
+        <!-- <a routerLink="/posts">posts</a> > {{post.title}}<br><br> -->
+        <ng-container *ngIf="loaded">
+           
+                <br>
+            <div class="img"><img src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post"></div>
+            <br>
+            <h3 class="title">{{post.title}}</h3>
+                <p class="text">{{post.content}}</p>
+        </ng-container>
+    </div>
 </div>

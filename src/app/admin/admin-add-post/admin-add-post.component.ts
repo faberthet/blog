@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { timeout } from 'rxjs';
 import { AddPostDto } from 'src/app/models/addPostDto';
 import { Post } from 'src/app/models/post';
 import { PostService } from 'src/app/services/post.service';
@@ -11,7 +13,7 @@ import { PostService } from 'src/app/services/post.service';
 export class AdminAddPostComponent implements OnInit {
   post:AddPostDto=new AddPostDto();
 
-  constructor(private postService:PostService){
+  constructor(private postService:PostService,private router: Router){
   }
 
   ngOnInit(): void {
@@ -20,8 +22,11 @@ export class AdminAddPostComponent implements OnInit {
   }
   
   onSubmit():void{
+    this.post.urlHandle=""
+    this.post.author="fabrice"
+    this.post.summary=this.post.content.substring(0,100)+"..."
     this.postService.addPost(this.post).subscribe({
-      next: response => console.log(response),
+      next: response => [console.log(response),this.router.navigate(['/admin/posts'])],
       error: error => console.log(error)
     })
     // console.log(this.post)
