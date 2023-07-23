@@ -8,7 +8,9 @@
             <div class="img"><img src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post"></div>
             <br>
             <h3 class="title">{{post.title}}</h3>
-                <p class="text">{{post.content}}</p>
+            <div class="date">{{post.author}} - {{post.publishDate | date}}
+            </div>
+            <p class="text">{{post.content}}</p>
         </ng-container>
     </div>
 </div>

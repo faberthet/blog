@@ -3,7 +3,8 @@
         <ng-container *ngFor="let post of posts.slice().reverse() | slice:0:1;">
             <img class="new-img" src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post">
             <div class="new-text">
-                <h2>{{post.title}}</h2>
+                <h2 class="new-title">{{post.title}}</h2>
+                <div class="date">{{post.author}} - {{post.publishDate | date}}</div>
                 <p class="new-summary">{{post.summary}}</p>
                 <a class="btn btn-primary" [routerLink]="['/posts/', post.id]">More...</a>
             </div>         
@@ -14,7 +15,8 @@
         <div class="card">
             <img class="card-img-top" src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post">
             <div class="card-body">
-                <h3 class="card-title">{{post.title}}</h3>
+               <a class="title-link" [routerLink]="['/posts/', post.id]"> <h3 class="card-title">{{post.title}}</h3></a>
+               <div class="date">{{post.author}} - {{post.publishDate | date}}</div>
                 <p class="card-text">{{post.summary | slice:0:80}}...</p>
                 <!-- <a class="btn btn-primary" [routerLink]="['/posts/', post.id]">More...</a> -->
             </div>

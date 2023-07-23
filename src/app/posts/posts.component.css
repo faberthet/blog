@@ -10,12 +10,15 @@ h1{
     margin-bottom: 30px;
     background-color: rgb(238, 238, 238);
 border-radius: 7px;
-/* border: 1px solid black; */
 }
 
 .new-img{
     width: 500px;
     border-radius: 7px;
+}
+.new-title{
+    margin-bottom: 5px;
+    margin-left: 0;
 }
 .new-text{
     padding-left: 30px;
@@ -27,45 +30,16 @@ border-radius: 7px;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
-
-.card{
-    /* width: 300px; */
+.title-link{
+    text-decoration: none;
+    color: black;
 }
-
-
-/* .new-posts{
-    display: grid;
-    grid-template-columns: 66% 33%;
-    grid-template-rows: 1fr 1fr;
-   
-    width: 80%;
-    gap: 8px;
-    margin: 15px auto;
-    
+.title-link:hover{
+    text-decoration: underline;
 }
-.old-posts{
-    width: 80%;
-    margin: 0 auto;
+.date{
+    font-size: 12px;
+    color: rgb(90, 90, 90);
+    margin-bottom: 5px;
+    padding-left: 2px;
 }
-.old-post{
-    display: flex;
-}
-.old-img{
-    height: 50px;
-}
-
-.card{
-    background-color: rgb(226, 226, 226);
-}
-.zero{
-grid-column: 1 / 2;
-grid-row: 1 / 3;
-}
-.one{
-grid-column: 2 / 3;
-grid-row: 1 / 2;
-}
-.two{
-grid-column: 2 / 3;
-grid-row: 2 / 3;
-} */
