@@ -17,10 +17,10 @@ export class PostsComponent implements OnInit {
   constructor(private postServices:PostService){}
 
   ngOnInit(): void {
-    this.postServices.getAllPosts().subscribe({
-      next: data => this.posts=data,
-      error: error => console.log(error)
-    })
+    // this.postServices.getAllPosts().subscribe({
+    //   next: data => this.posts=data,
+    //   error: error => console.log(error)
+    // })
   }
 
 }

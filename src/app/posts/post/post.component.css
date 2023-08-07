@@ -25,9 +25,10 @@ a:hover{
 .date{
     font-size: 12px;
     color: rgb(82, 82, 82);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     padding-left: 2px;
 }
 .title{
     margin-bottom: 5px;
+    margin-top: 10px;
 }

@@ -1,5 +1,5 @@
-<h1>The Blog</h1>
-    <div class="new-post">
+<!-- <h1>The Blog</h1> -->
+    <!-- <div class="new-post">
         <ng-container *ngFor="let post of posts.slice().reverse() | slice:0:1;">
             <img class="new-img" src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post">
             <div class="new-text">
@@ -18,11 +18,15 @@
                <a class="title-link" [routerLink]="['/posts/', post.id]"> <h3 class="card-title">{{post.title}}</h3></a>
                <div class="date">{{post.author}} - {{post.publishDate | date}}</div>
                 <p class="card-text">{{post.summary | slice:0:80}}...</p>
-                <!-- <a class="btn btn-primary" [routerLink]="['/posts/', post.id]">More...</a> -->
             </div>
         </div>
         </ng-container>
-    </div>
-
-
-
+    </div> -->
+    <app-five-images></app-five-images>
+    <app-four-images></app-four-images>
+    <app-cards-three-columns></app-cards-three-columns>
+    
+    <app-two-cards-right></app-two-cards-right>
+    <app-two-cards-left></app-two-cards-left>
+    <app-cards-three-columns></app-cards-three-columns>
+    <app-cards-four-columns></app-cards-four-columns>

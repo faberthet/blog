@@ -11,7 +11,13 @@ import { FormsModule } from '@angular/forms';
 import { AdminAddPostComponent } from './admin/admin-add-post/admin-add-post.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FourImagesComponent } from './posts-templates/four-images/four-images.component';
+import { FiveImagesComponent } from './posts-templates/five-images/five-images.component';
+import { CardsThreeColumnsComponent } from './posts-templates/cards-three-columns/cards-three-columns.component';
+import { CardsFourColumnsComponent } from './posts-templates/cards-four-columns/cards-four-columns.component';
+import { TwoCardsLeftComponent } from './posts-templates/two-cards-left/two-cards-left.component';
+import { TwoCardsRightComponent } from './posts-templates/two-cards-right/two-cards-right.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +26,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminViewPostComponent,
     AdminAddPostComponent,
     PostsComponent,
-    PostComponent
+    PostComponent,
+    FourImagesComponent,
+    FiveImagesComponent,
+    CardsThreeColumnsComponent,
+    CardsFourColumnsComponent,
+    TwoCardsLeftComponent,
+    TwoCardsRightComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+   // BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

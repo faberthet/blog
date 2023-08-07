@@ -23,8 +23,10 @@ export class AdminAddPostComponent implements OnInit {
   
   onSubmit():void{
     this.post.urlHandle=""
-    this.post.author="fabrice"
+    // this.post.author="fabrice"
     this.post.summary=this.post.content.substring(0,100)+"..."
+    this.post.publishDate=new Date();
+    this.post.updatedDate=new Date();
     this.postService.addPost(this.post).subscribe({
       next: response => [console.log(response),this.router.navigate(['/admin/posts'])],
       error: error => console.log(error)
