@@ -1,3 +1,12 @@
 input,textarea{
     border-color: black;
 }
+
+ckeditor{
+    color: black;
+    
+}
+.editor{
+    border: solid 1px rgb(80, 80, 80);
+    
+}

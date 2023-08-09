@@ -9,9 +9,15 @@
             <label class="form-label">Title</label>
             <input type="text" class="form-control" name="title" [(ngModel)]="post.title">
         </div>
-        <div class="mb-3">
+        <!-- <div class="mb-3">
             <label class="form-label">Content</label>
             <textarea class="form-control" name="content" [(ngModel)]="post.content"></textarea>
+        </div> -->
+        <div class="mb-3">
+            <label class="form-label">Content</label>
+            <div class="editor">
+            <ckeditor [editor]="Editor" [(ngModel)]="editorContent" name="content" (ready)="onReady($event)"></ckeditor>
+            </div>
         </div>
         <!-- <div class="mb-3">
             <label class="form-label">Summary</label>

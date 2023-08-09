@@ -6,10 +6,10 @@
 <br>
             <div class="img"><img src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post"></div>
             
-            <h3 class="title">{{post.title}}</h3>
+            <h3 class="title" style="color:hsl(0, 75%, 60%);">{{post.title}}</h3>
             <div class="date">{{post.author}} - {{post.publishDate | date}}
             </div>
-            <p class="text">{{post.content}}</p>
+            <div class="content" [innerHTML]="post.content"></div>
         </ng-container>
     </div>
 </div>

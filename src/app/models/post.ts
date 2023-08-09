@@ -3,7 +3,6 @@ export class Post {
     title!:string;
     content!:string;
     summary!:string;
-    urlHandle!:string;
     author!:string;
     visible!:boolean;
     publishDate!: Date;
