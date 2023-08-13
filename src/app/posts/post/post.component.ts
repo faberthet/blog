@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/models/post';
 import { PostService } from 'src/app/services/post.service';
 import { environment } from 'src/environments/environment.development';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-post',
@@ -15,7 +16,11 @@ export class PostComponent implements OnInit{
   imagesPath:string=environment.imagesPath
   loaded:boolean=false;
 
-  constructor(private postService:PostService,private route: ActivatedRoute){}
+  trustedHtmlContent:SafeHtml="";
+
+  constructor(private postService:PostService,private route: ActivatedRoute, private sanitizer:DomSanitizer){
+    
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(
@@ -23,7 +28,10 @@ export class PostComponent implements OnInit{
       { 
         var id= Number(params.get('id'));
         this.postService.getPostById(id).subscribe({
-          next: data =>  [this.post=data,this.loaded=true],
+          next: data => [
+            this.post=data,this.loaded=true,
+            this.trustedHtmlContent=this.sanitizer.bypassSecurityTrustHtml(this.post.content)
+          ],
           error: error => console.log(error)
         })
       })

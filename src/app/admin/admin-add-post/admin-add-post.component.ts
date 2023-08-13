@@ -4,8 +4,9 @@ import { timeout } from 'rxjs';
 import { AddPostDto } from 'src/app/models/addPostDto';
 import { Post } from 'src/app/models/post';
 import { PostService } from 'src/app/services/post.service';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
+
+import { environment } from 'src/environments/environment.development';
+
 
 @Component({
   selector: 'app-admin-add-post',
@@ -13,12 +14,13 @@ import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
   styleUrls: ['./admin-add-post.component.css']
 })
 export class AdminAddPostComponent implements OnInit {
+
   post:AddPostDto=new AddPostDto();
   editorContent:string="";
-  public Editor= DecoupledEditor;
-  public model = {
-    editorData: '<p>Hello, world!</p>'
-};
+  
+  // public Editor= DecoupledEditor;
+ 
+  apiBaseUrl = environment.apiBaseUrl
 
   constructor(private postService:PostService,private router: Router){
   }
@@ -41,14 +43,15 @@ export class AdminAddPostComponent implements OnInit {
     // console.log(this.post)
   }
 
-  public onReady( editor: DecoupledEditor ): void {
-    const element = editor.ui.getEditableElement()!;
-    const parent = element.parentElement!;
+ 
 
-    parent.insertBefore(
-      editor.ui.view.toolbar.element!,
-      element
-    );
+  public config={
+    // plugins: [SimpleUploadAdapter ],
+    //language: 'fr', 
+    simpleUpload: {
+      uploadUrl: this.apiBaseUrl+"upload/ckeditor",
+
+    }
   }
 
 }

@@ -9,7 +9,7 @@
             <h3 class="title" style="color:hsl(0, 75%, 60%);">{{post.title}}</h3>
             <div class="date">{{post.author}} - {{post.publishDate | date}}
             </div>
-            <div class="content" [innerHTML]="post.content"></div>
+            <div class="content" [innerHTML]="trustedHtmlContent"></div>
         </ng-container>
     </div>
 </div>

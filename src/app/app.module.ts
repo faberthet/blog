@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,7 +41,7 @@ import { TwoCardsRightComponent } from './posts-templates/two-cards-right/two-ca
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CKEditorModule
+    
    // BrowserAnimationsModule
   ],
   providers: [],
