@@ -21,6 +21,8 @@ import { CardsFourColumnsComponent } from './posts-templates/cards-four-columns/
 import { TwoCardsLeftComponent } from './posts-templates/two-cards-left/two-cards-left.component';
 import { TwoCardsRightComponent } from './posts-templates/two-cards-right/two-cards-right.component';
 
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +43,7 @@ import { TwoCardsRightComponent } from './posts-templates/two-cards-right/two-ca
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    CKEditorModule
     
    // BrowserAnimationsModule
   ],

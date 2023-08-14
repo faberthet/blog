@@ -4,6 +4,7 @@ import { timeout } from 'rxjs';
 import { AddPostDto } from 'src/app/models/addPostDto';
 import { Post } from 'src/app/models/post';
 import { PostService } from 'src/app/services/post.service';
+import * as CustomEditor from 'ckeditor5-custom-build/build/ckeditor'
 
 import { environment } from 'src/environments/environment.development';
 
@@ -18,7 +19,7 @@ export class AdminAddPostComponent implements OnInit {
   post:AddPostDto=new AddPostDto();
   editorContent:string="";
   
-  // public Editor= DecoupledEditor;
+  public Editor= CustomEditor;
  
   apiBaseUrl = environment.apiBaseUrl
 
@@ -45,13 +46,125 @@ export class AdminAddPostComponent implements OnInit {
 
  
 
-  public config={
-    // plugins: [SimpleUploadAdapter ],
-    //language: 'fr', 
-    simpleUpload: {
-      uploadUrl: this.apiBaseUrl+"upload/ckeditor",
+ 
 
-    }
-  }
+public config = {
+  toolbar: {
+    items: [
+      'heading',
+      '|',
+      'bold',
+      'italic',
+      'underline',
+      'link',
+      '|',
+      'imageUpload',
+      'insertTable',
+      'mediaEmbed',
+      'undo',
+      'redo',
+      '|',
+      'fontColor',
+      'fontBackgroundColor',
+      'fontFamily',
+      'fontSize',
+      '|',
+      'alignment',
+      'bulletedList',
+      'numberedList',
+      '|',
+      'subscript',
+      'superscript'
+    ]
+  },
+  language: 'en',
+  image: {
+    toolbar: [
+      'imageTextAlternative',
+      'toggleImageCaption',
+      'imageStyle:inline',
+      'imageStyle:block',
+      'imageStyle:side',
+      'linkImage'
+    ]
+  },
+  table: {
+    contentToolbar: [
+      'tableColumn',
+      'tableRow',
+      'mergeTableCells',
+      'tableCellProperties',
+      'tableProperties'
+    ]
+  },
+  simpleUpload: {
+    // The URL that the images are uploaded to.
+    uploadUrl: this.apiBaseUrl + "",
+
+}
+}
+
+public config2={
+  toolbar: {
+    items: [
+      'heading',
+      '|',
+      'bold',
+      'italic',
+      'underline',
+      '|',
+      'fontFamily',
+      // 'fontSize', // ne marche pas
+      'fontColor',
+      'fontBackgroundColor',
+      '|',
+      'link',
+      'bulletedList',
+      'numberedList',
+      '|',
+      'alignment',
+      'outdent',
+      'indent',
+      '|',
+      'imageUpload',
+      'blockQuote',
+      'insertTable',
+      'mediaEmbed',
+      'undo',
+      'redo',
+      'highlight',
+      'imageInsert',
+      //'specialCharacters', //ne fonctionne pas
+      'todoList'
+    ]
+  },
+  language: 'fr',
+  image: {
+    toolbar: [
+      'imageTextAlternative',
+      // 'imageStyle:inline',
+      // 'imageStyle:block',
+      // 'imageStyle:side',
+      'linkImage',
+      'toggleImageCaption',
+      'resizeImage'
+    ]
+  },
+  table: {
+    contentToolbar: [
+      'tableColumn',
+      'tableRow',
+      'mergeTableCells',
+      'tableCellProperties',
+      'tableProperties'
+    ]
+  },
+  simpleUpload: {
+    // The URL that the images are uploaded to.
+    uploadUrl: this.apiBaseUrl + "",
+
+}
+
+}
 
 }
