@@ -23,6 +23,9 @@ import { TwoCardsRightComponent } from './posts-templates/two-cards-right/two-ca
 
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
+import { AdminCategoriesComponent } from './admin/categories/admin-categories/admin-categories.component';
+import { AdminCategoryLineComponent } from './admin/categories/admin-category-line/admin-category-line.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +39,9 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     CardsThreeColumnsComponent,
     CardsFourColumnsComponent,
     TwoCardsLeftComponent,
-    TwoCardsRightComponent
+    TwoCardsRightComponent,
+    AdminCategoriesComponent,
+    AdminCategoryLineComponent
   ],
   imports: [
     BrowserModule,

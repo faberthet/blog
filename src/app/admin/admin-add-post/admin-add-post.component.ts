@@ -99,7 +99,7 @@ public config = {
   },
   simpleUpload: {
     // The URL that the images are uploaded to.
-    uploadUrl: this.apiBaseUrl + "",
+    uploadUrl: this.apiBaseUrl + "api/file/ckeditor-image",
 
 }
 }

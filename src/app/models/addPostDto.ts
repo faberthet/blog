@@ -7,4 +7,5 @@ export class AddPostDto {
     publishDate!: Date;
     updatedDate!: Date;
     featuredImageUrl!:string;
+    CategoryId!:number;
 }

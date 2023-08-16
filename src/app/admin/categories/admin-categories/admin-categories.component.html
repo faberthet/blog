@@ -1,0 +1,23 @@
+<div class="container">
+    <input type="text" [(ngModel)]="categoryName">
+    <button class="btn btn-primary" (click)="addCategory()">Add Category</button>
+    <a [routerLink]="['/admin/posts/add']"><button class="btn btn-primary">Create new post</button></a>
+    <br>
+    <br>
+    <h1>All Categories</h1>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let category of categories.slice().reverse()">
+            <app-admin-category-line [category]="category"></app-admin-category-line>
+            <td><button class="btn btn-danger" (click)="delete(category.id, category.name)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
