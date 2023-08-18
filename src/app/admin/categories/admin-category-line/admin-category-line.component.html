@@ -1,3 +1,5 @@
-<td>{{category.name}}</td>
-<td *ngIf="!rename"><button (click)="toggleRename()">Rename</button></td>
-<td *ngIf="rename"><input type="text" [(ngModel)]="newName"><button (click)="update()">confirm</button><button (click)="toggleRename()">cancel</button></td>
+<div class="category">
+<div>{{category.name}}</div>
+<div *ngIf="!rename"><button class="btn btn-danger" (click)="toggleRename()">Rename</button></div>
+<div *ngIf="rename"><input type="text" [(ngModel)]="newName"><button (click)="update()">confirm</button><button (click)="toggleRename()">cancel</button></div>
+</div>

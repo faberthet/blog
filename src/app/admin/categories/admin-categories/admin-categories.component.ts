@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from 'src/app/models/Category';
+import { Category } from 'src/app/models/categories/Category';
+import { AddCategoryDto } from 'src/app/models/categories/addCategoryDto';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { CategoryService } from 'src/app/services/category.service';
 export class AdminCategoriesComponent implements OnInit {
   
   categories:Category[]=[];
-  categoryName:string="";
+  categoryName:AddCategoryDto={name:""};
 
   constructor(private categoryService:CategoryService) {}
 
@@ -20,13 +21,13 @@ export class AdminCategoriesComponent implements OnInit {
 
   getCategories(){
     this.categoryService.getAllCategories().subscribe({
-      next: response => this.categories=response,
+      next: response => [console.log(response),this.categories=response],
       error: error => console.log(error)
 })
   }
 
   addCategory(){
-    if(this.categoryName!=""){
+    if(this.categoryName.name!=""){
       this.categoryService.addCategory(this.categoryName).subscribe({
         next: response => [console.log(response),this.getCategories()],
         error: error => console.log(error)

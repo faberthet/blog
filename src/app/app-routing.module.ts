@@ -5,13 +5,16 @@ import { AdminViewPostComponent } from './admin/admin-view-post/admin-view-post.
 import { AdminAddPostComponent } from './admin/admin-add-post/admin-add-post.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
+import { AdminCategoriesComponent } from './admin/categories/admin-categories/admin-categories.component';
 
 const routes: Routes = [
   {path:"admin/posts",component:AdminPostsComponent},
   {path:"admin/posts/add",component:AdminAddPostComponent},
   {path:"admin/posts/:id",component:AdminViewPostComponent},
+  {path:"admin/categories",component:AdminCategoriesComponent},
   {path:"posts",component:PostsComponent},
-  {path:"posts/:id",component:PostComponent}
+  {path:"posts/:id",component:PostComponent},
+
 ];
 
 @NgModule({

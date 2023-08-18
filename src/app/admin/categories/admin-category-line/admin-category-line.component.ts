@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Category } from 'src/app/models/Category';
+import { Category } from 'src/app/models/categories/Category';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
@@ -21,8 +21,11 @@ export class AdminCategoryLineComponent {
 
   update(){
     if(this.newName!=""){
-      if(confirm("rename"+ this.category.name + "to" + this.newName)){
-        this.categoryService.updateCategory(this.category.id, this.newName).subscribe({
+      if(confirm("rename "+ this.category.name + " to " + this.newName)){
+        const editedCategory:Category=new Category()
+        editedCategory.id=this.category.id
+        editedCategory.name=this.newName
+        this.categoryService.updateCategory(editedCategory).subscribe({
           next: response => [console.log(response),this.category.name=this.newName,this.toggleRename()],
           error: error => console.log(error)
         })
