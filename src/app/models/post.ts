@@ -8,5 +8,5 @@ export class Post {
     publishDate!: Date;
     updatedDate!: Date;
     featuredImageUrl!:string;
-    CategoryId!:number;
+    categoryId!:number;
 }

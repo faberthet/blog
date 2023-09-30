@@ -8,5 +8,5 @@ export class UpdatePostDto {
     publishDate!: Date;
     updatedDate!: Date;
     featuredImageUrl!:string;
-    CategoryId!:number;
+    categoryId!:number;
 }

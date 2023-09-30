@@ -7,6 +7,8 @@ import { PostService } from 'src/app/services/post.service';
 import * as CustomEditor from 'ckeditor5-custom-build/build/ckeditor'
 
 import { environment } from 'src/environments/environment.development';
+import { Category } from 'src/app/models/categories/Category';
+import { CategoryService } from 'src/app/services/category.service';
 
 
 @Component({
@@ -16,6 +18,7 @@ import { environment } from 'src/environments/environment.development';
 })
 export class AdminAddPostComponent implements OnInit {
 
+  categories:Category[]=[];
   post:AddPostDto=new AddPostDto();
   editorContent:string="";
   
@@ -23,12 +26,12 @@ export class AdminAddPostComponent implements OnInit {
  
   apiBaseUrl = environment.apiBaseUrl
 
-  constructor(private postService:PostService,private router: Router){
+  constructor(private postService:PostService, private categoryService:CategoryService, private router: Router){
   }
 
   ngOnInit(): void {
     console.log(this.post)
-    // this.post.title=""
+    this.getCategories();
   }
   
   onSubmit():void{
@@ -44,7 +47,12 @@ export class AdminAddPostComponent implements OnInit {
     // console.log(this.post)
   }
 
- 
+  getCategories(){
+    this.categoryService.getAllCategories().subscribe({
+      next: response => [this.categories=response],
+      error: error=>console.log(error)
+    })
+  }
 
  
 

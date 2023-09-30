@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Post } from 'src/app/models/post';
 
 @Component({
   selector: 'app-cards-four-columns',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./cards-four-columns.component.css']
 })
 export class CardsFourColumnsComponent {
+
+  @Input() posts:Post[]=[];
+  
 
 }

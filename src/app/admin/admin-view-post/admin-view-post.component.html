@@ -14,8 +14,17 @@
             <input type="text" class="form-control" name="title" [(ngModel)]="post.title">
         </div>
         <div class="mb-3">
+            <label class="form-label">Category</label>
+            <select class="form-select" [(ngModel)]="post.categoryId">
+                <option [ngValue]="null" disabled>Select Category</option>
+                <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
             <label class="form-label">Content</label>
-            <textarea class="form-control" name="content" [(ngModel)]="post.content"></textarea>
+            <div class="editor">
+            <ckeditor [editor]="Editor" [config]="config" [(ngModel)]="editorContent" name="content" ></ckeditor> 
+            </div>
         </div>
         <!-- <div class="mb-3">
             <label class="form-label">Summary</label>
@@ -28,10 +37,6 @@
         <!-- <div class="mb-3">
             <label class="form-label">Author</label>
             <input type="text" class="form-control" name="author" [(ngModel)]="post.author">
-        </div> -->
-        <!-- <div class="mb-3">
-            <label class="form-label">Url Handle</label>
-            <input type="text" class="form-control" name="urlHandle" [(ngModel)]="post.urlHandle">
         </div> -->
         <div class="form-check mb-3">
             <input class="form-check-input" type="checkbox" name="visible" [(ngModel)]="post.visible">
