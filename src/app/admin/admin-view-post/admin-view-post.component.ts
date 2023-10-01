@@ -40,7 +40,10 @@ export class AdminViewPostComponent implements OnInit {
 
   getPostById(id:number){
     this.postService.getPostById(id).subscribe({
-      next: response => this.post=response,
+      next: response => [this.post=response,
+         this.editorContent=this.post.content
+         .replaceAll("C:\\Users\\faberthet\\Desktop\\dev\\aspNet\\blogfront\\src\\assets\\images\\ckupload\\","assets/images/ckupload/"),
+        console.log(this.editorContent)],
       error: error => console.log(error)
     })
   }
