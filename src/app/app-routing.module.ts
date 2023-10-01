@@ -8,12 +8,14 @@ import { PostComponent } from './posts/post/post.component';
 import { AdminCategoriesComponent } from './admin/categories/admin-categories/admin-categories.component';
 
 const routes: Routes = [
+  {path:"",component:PostsComponent},
   {path:"admin/posts",component:AdminPostsComponent},
   {path:"admin/posts/add",component:AdminAddPostComponent},
   {path:"admin/posts/:id",component:AdminViewPostComponent},
   {path:"admin/categories",component:AdminCategoriesComponent},
-  {path:"posts",component:PostsComponent},
+  
   {path:"posts/:id",component:PostComponent},
+  
 
 ];
 

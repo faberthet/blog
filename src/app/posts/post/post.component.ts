@@ -29,7 +29,9 @@ export class PostComponent implements OnInit{
         var id= Number(params.get('id'));
         this.postService.getPostById(id).subscribe({
           next: data => [
-            this.post=data,this.loaded=true,
+            this.post=data,
+            this.post.content=this.post.content.replaceAll("C:\\Users\\faberthet\\Desktop\\dev\\aspNet\\blogfront\\src\\",""),
+            this.loaded=true,
             this.trustedHtmlContent=this.sanitizer.bypassSecurityTrustHtml(this.post.content)
           ],
           error: error => console.log(error)

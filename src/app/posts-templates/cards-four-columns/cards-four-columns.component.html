@@ -1,19 +1,21 @@
 <section class="section posts-entry posts-entry-sm bg-light">
     <div class="container">
         <div class="row">
+            <ng-container *ngFor="let post of posts">
             <div class="col-md-6 col-lg-3">
                 <div class="blog-entry">
-                    <ng-container *ngFor="let post of posts">
+                    
                         <a [routerLink]="['/posts/', post.id]" class="img-link">
                             <img src="/assets/images/img_4_horizontal.jpg" alt="Image" class="img-fluid">
                         </a>
                         <span class="date">{{post.publishDate}}</span>
                         <h2><a href="single.html">{{post.title}}</a></h2>
                         <p>{{post.summary}}</p>
-                        <p><a href="#" class="read-more">Continue Reading</a></p>
-                </ng-container>
+                        <p><a [routerLink]="['/posts/', post.id]" class="read-more">Continue Reading</a></p>
+                
                 </div>
             </div>
+        </ng-container>
         </div>
     </div>
 </section>
