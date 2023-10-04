@@ -11,3 +11,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 /*body{
      background-color: black; 
 }*/
+.section {
+     padding-top: 2rem;
+     /* padding-bottom: 2rem;  */
+}

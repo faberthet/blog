@@ -25,6 +25,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AdminCategoriesComponent } from './admin/categories/admin-categories/admin-categories.component';
 import { AdminCategoryLineComponent } from './admin/categories/admin-category-line/admin-category-line.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AdminCategoryLineComponent } from './admin/categories/admin-category-li
     TwoCardsLeftComponent,
     TwoCardsRightComponent,
     AdminCategoriesComponent,
-    AdminCategoryLineComponent
+    AdminCategoryLineComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
