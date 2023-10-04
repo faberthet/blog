@@ -10,10 +10,10 @@
         <!-- <ng-container *ngFor="let post of posts.slice().reverse() | slice:0:1;"> -->
         <div class="row align-items-stretch retro-layout-alt" >
 
-            <div class="col-md-5 order-md-2" *ngFor="let post of posts.slice().reverse() | slice:0:1;">
+            <div class="col-md-5 order-md-2" *ngFor="let post of posts.slice().reverse() | slice:1:2;">
                 <a [routerLink]="['/posts/', post.id]" class="hentry img-1 h-100 gradient">
                     <!-- <div class="featured-img" style="background-image: url('/assets/images/img_2_vertical.jpg');"></div> -->
-                    <div class="featured-img" style="background-image: url('/assets/images/img2.jpg');"></div>
+                    <div class="featured-img" style="background-image: url('/assets/images/{{post.featuredImageUrl}}');"></div>
                     <div class="text">
                         <span>{{post.publishDate | date}}</span>
                         <h2>{{post.title}}</h2>
@@ -21,11 +21,11 @@
                 </a>
             </div>
 
-            <div class="col-md-7" *ngFor="let post of posts.slice().reverse() | slice:1:2;">
+            <div class="col-md-7" *ngFor="let post of posts.slice().reverse() | slice:0:1;">
 
                 <a [routerLink]="['/posts/', post.id]" class="hentry img-2 v-height mb30 gradient">
                     <!-- <div class="featured-img" style="background-image: url('/assets/images/img_1_horizontal.jpg');"></div> -->
-                    <div class="featured-img" style="background-image: url('/assets/images/img2.jpg');"></div>
+                    <div class="featured-img" style="background-image: url('/assets/images/{{post.featuredImageUrl}}');"></div>
                     <div class="text text-sm">
                         <!-- <span>February 12, 2019</span> -->
                         <span>{{post.publishDate | date}}</span>
@@ -35,14 +35,14 @@
 
                 <div class="two-col d-block d-md-flex justify-content-between" *ngFor="let post of posts.slice().reverse() | slice:2:3;">
                     <a [routerLink]="['/posts/', post.id]" class="hentry v-height img-2 gradient">
-                        <div class="featured-img" style="background-image: url('/assets/images/img_2_sq.jpg');"></div>
+                        <div class="featured-img" style="background-image: url('/assets/images/{{post.featuredImageUrl}}');"></div>
                         <div class="text text-sm">
                             <span>{{post.publishDate | date}}</span>
                             <h2>{{post.title}}</h2>
                         </div>
                     </a>
                     <a [routerLink]="['/posts/', post.id]" class="hentry v-height img-2 ms-auto float-end gradient" *ngFor="let post of posts.slice().reverse() | slice:3:4;">
-                        <div class="featured-img" style="background-image: url('/assets/images/img_3_sq.jpg');"></div>
+                        <div class="featured-img" style="background-image: url('/assets/images/{{post.featuredImageUrl}}');"></div>
                         <div class="text text-sm">
                             <span>{{post.publishDate | date}}</span>
                             <h2>{{post.title}}</h2>

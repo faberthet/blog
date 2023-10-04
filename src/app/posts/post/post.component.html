@@ -3,12 +3,12 @@
     <div class="frame">
         <!-- <a routerLink="/posts">posts</a> > {{post.title}}<br><br> -->
         <ng-container *ngIf="loaded">
-<br>
+<br><br>
             <!-- <div class="img"><img src="{{imagesPath}}{{post.featuredImageUrl}}" alt="featured image of the post"></div> -->
             
-            <h3 class="title" style="color:hsl(0, 75%, 60%);">{{post.title}}</h3>
-            <div class="date">{{post.author}} - {{post.publishDate | date}}
-            </div>
+            <!-- <h3 class="title" style="color:hsl(0, 75%, 60%);">{{post.title}}</h3> -->
+            <!-- <div class="date">{{post.author}} - {{post.publishDate | date}} -->
+            <!-- </div> -->
             <div class="content" [innerHTML]="trustedHtmlContent"></div>
         </ng-container>
     </div>

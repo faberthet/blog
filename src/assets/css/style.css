@@ -9640,7 +9640,7 @@ body {
   font-weight: 400;
   font-size: 15px;
   overflow-x: hidden;
-  color: #848d92;
+  /* color: #848d92; */
   position: relative; }
   body:before {
     content: "";

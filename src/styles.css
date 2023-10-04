@@ -15,3 +15,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
      padding-top: 2rem;
      /* padding-bottom: 2rem;  */
 }
+
+
+
+/* Style for ckeditor html content */
+ figure{
+ margin: 0 auto;
+ }
+ figure img{
+     width: 100%;
+ }
+ 
+figcaption{
+     font-size: 12px;
+ }

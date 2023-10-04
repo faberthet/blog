@@ -7,16 +7,16 @@
             <!-- <div class="col-sm-6 text-sm-end"><a href="category.html" class="read-more">View All</a></div> -->
         </div>
         <div class="row">
-            <ng-container *ngFor="let post of posts">
+            <ng-container *ngFor="let post of posts.reverse() | slice:4;">
             <div class="col-md-6 col-lg-3">
                 <div class="blog-entry">
                     
                         <a [routerLink]="['/posts/', post.id]" class="img-link">
-                            <img src="/assets/images/img_4_horizontal.jpg" alt="Image" class="img-fluid">
+                            <img src="/assets/images/{{post.featuredImageUrl}}" alt="Image" class="img-fluid">
                         </a>
-                        <span class="date">{{post.publishDate}}</span>
+                        <span class="date">{{post.publishDate | date}}</span>
                         <h2><a href="single.html">{{post.title}}</a></h2>
-                        <p>{{post.summary}}</p>
+                       <!-- <p>{{post.summary}}</p> -->
                         <p><a [routerLink]="['/posts/', post.id]" class="read-more">Continue Reading</a></p>
                 
                 </div>

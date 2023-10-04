@@ -35,7 +35,7 @@ export class AdminAddPostComponent implements OnInit {
   }
   
   onSubmit():void{
-    // this.post.author="fabrice"
+    this.post.categoryId=4
     this.post.content=this.editorContent;
     this.post.summary=this.post.content.substring(0,100)+"...";
     this.post.publishDate=new Date();
